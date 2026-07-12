@@ -1,9 +1,6 @@
 /* =========================================================
    LUXORA — Supabase configuration
-   Fill these in from your Supabase project dashboard:
-   Project Settings → API → Project URL / anon public key.
-
-   For demo without Supabase, the app falls back to localStorage.
+   Connected to: https://waolhycpotenkzxgbzqg.supabase.co
    ========================================================= */
 
 const SUPABASE_URL = "https://waolhycpotenkzxgbzqg.supabase.co";
@@ -14,11 +11,12 @@ let sb;
 try {
   if (typeof supabase !== "undefined") {
     sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log("✅ Supabase connected successfully");
   } else {
-    console.warn("Supabase library not loaded. Running in demo mode with localStorage.");
+    console.warn("⚠️ Supabase library not loaded. Running in demo mode.");
     sb = null;
   }
 } catch (e) {
-  console.warn("Supabase init failed. Running in demo mode:", e.message);
+  console.warn("⚠️ Supabase init failed:", e.message);
   sb = null;
 }
