@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LUXORA — Timeless Elegance in Every Watch</title>
+<meta name="description" content="LUXORA is a luxury watch house — Classic, Sport and Premium timepieces, crafted to be worn for a lifetime." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="loading-bar" aria-hidden="true"></div>
+  <div id="boot-spinner" class="boot-spinner" aria-hidden="true"><span class="spinner"></span></div>
+
+  <!-- ============ ANNOUNCEMENT BAR ============ -->
+  <div class="announce-bar">Free delivery within Nepal &amp; India on orders over <strong>Rs. 50,000</strong> &nbsp;&middot;&nbsp; Prices shown are indicative &mdash; confirm with an authorized dealer before purchase</div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="logo" href="#/home" aria-label="LUXORA home">
+        <svg class="logo__tag" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="12" y1="12" x2="12" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="12" y1="12" x2="15.2" y2="13.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__word">LUXORA</span>
+      </a>
+
+      <nav class="nav" id="primary-nav">
+        <a class="nav__link" data-page="home" href="#/home">Home</a>
+        <a class="nav__link" data-page="watches" href="#/watches">Watches</a>
+        <a class="nav__link" data-page="watches" href="#/watches?cat=Premium">Collections</a>
+        <a class="nav__link" data-page="about" href="#/about">About Us</a>
+        <a class="nav__link" data-page="wishlist" href="#/wishlist">Wishlist</a>
+        <a class="nav__link" data-page="account" href="#/account">Account</a>
+        <a class="nav__link" data-page="contact" href="#/contact">Contact</a>
+      </nav>
+
+      <form class="nav-search" id="nav-search-form" role="search">
+        <input type="search" id="nav-search-field" placeholder="Search watches…" aria-label="Search watches" autocomplete="off" />
+        <button type="submit" class="nav-search__btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="search-dropdown" id="nav-search-dropdown"></div>
+      </form>
+
+      <div class="header-actions">
+        <a class="icon-btn account-link" id="account-link" href="#/account" aria-label="Account">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+        <a class="icon-btn wishlist-link" href="#/wishlist" aria-label="View wishlist">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.7-10-9.2C.5 8.1 2.4 4.5 6 4c2.1-.3 3.9.8 6 3 2.1-2.2 3.9-3.3 6-3 3.6.5 5.5 4.1 4 7.8-2.5 4.5-10 9.2-10 9.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span id="wishlist-count" class="wishlist-count-badge">0</span>
+        </a>
+        <a class="icon-btn cart-link" href="#/cart" aria-label="View cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 4h2l1.6 10.6a2 2 0 0 0 2 1.7h8.8a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="20" r="1.3" fill="currentColor"/><circle cx="17.5" cy="20" r="1.3" fill="currentColor"/></svg>
+          <span id="cart-count" class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HOME ============ -->
+    <section class="page page--active" id="page-home">
+
+      <section class="hero">
+        <div class="hero__inner">
+          <div class="hero__copy" id="hero-copy"><!-- filled by HeroCarousel --></div>
+          <div class="hero__art" id="hero-art"></div>
+        </div>
+        <div class="hero__nav">
+          <div class="hero__dots" id="hero-dots"></div>
+          <div class="hero__arrows">
+            <button type="button" id="hero-prev" aria-label="Previous slide">&larr;</button>
+            <button type="button" id="hero-next" aria-label="Next slide">&rarr;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <div class="trust-strip__inner">
+          <div class="trust-item">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 7h11v9H3z" stroke="currentColor" stroke-width="1.4"/><path d="M14 10h4l3 3v3h-7z" stroke="currentColor" stroke-width="1.4"/><circle cx="7" cy="18" r="1.6" stroke="currentColor" stroke-width="1.3"/><circle cx="17" cy="18" r="1.6" stroke="currentColor" stroke-width="1.3"/></svg>
+            <span><strong>Free Shipping</strong><span>Worldwide on all orders</span></span>
+          </div>
+          <div class="trust-item">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span><strong>24/7 Support</strong><span>We're here to help</span></span>
+          </div>
+          <div class="trust-item">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 0 3-6.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M4 4v4h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>30 Days Return</strong><span>Easy returns &amp; exchanges</span></span>
+          </div>
+          <div class="trust-item">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <span><strong>Premium Quality</strong><span>Authentic luxury watches</span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">Featured Collections</p>
+            <h2 class="section__title">Explore Our Top Collections</h2>
+          </div>
+          <a class="section__link" href="#/watches">View All Collections &rarr;</a>
+        </div>
+        <div class="collection-grid" id="collection-grid"></div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">New Arrivals</p>
+            <h2 class="section__title">Latest Timepieces</h2>
+          </div>
+          <a class="section__link" href="#/watches">View All Watches &rarr;</a>
+        </div>
+        <div class="product-grid" id="latest-products"></div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">Testimonials</p>
+            <h2 class="section__title">What people are saying</h2>
+          </div>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial">
+            <p>"The Meridian looks better after a year of daily wear than it did in the box. That's rare."</p>
+            <cite>&mdash; Priya N., verified buyer</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Ordering was quick and the packaging felt like it matched a lakh-rupee watch. Zero complaints."</p>
+            <cite>&mdash; Marcus D., verified buyer</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Finally a store where the description matches exactly what shows up at your door."</p>
+            <cite>&mdash; Elena R., verified buyer</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="section newsletter">
+        <div class="newsletter__inner">
+          <p class="eyebrow">Stay in the know</p>
+          <h2 class="section__title">Join the mailing list</h2>
+          <p class="newsletter__sub">One email a month. New arrivals, restocks, nothing else.</p>
+          <form class="newsletter__form" id="newsletter-form" novalidate>
+            <div class="field">
+              <input type="email" id="newsletter-email" placeholder="you@example.com" required />
+              <span class="field__error"></span>
+            </div>
+            <button type="submit" class="btn btn--primary">Subscribe</button>
+          </form>
+          <p class="form-message" id="newsletter-message"></p>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="page" id="page-about">
+      <section class="brand-strip">
+        <p class="brand-strip__title">Brands in our <strong>catalog</strong> &mdash; from everyday to ultra-luxury</p>
+        <div class="brand-row">
+          <span class="brand-row__item">ROLEX</span>
+          <span class="brand-row__item">OMEGA</span>
+          <span class="brand-row__item">TAG HEUER</span>
+          <span class="brand-row__item">TISSOT</span>
+          <span class="brand-row__item">TITAN</span>
+          <span class="brand-row__item">CASIO</span>
+          <span class="brand-row__item">LONGINES</span>
+          <span class="brand-row__item">CARTIER</span>
+        </div>
+        <p class="brand-strip__note">LUXORA is an independent multi-brand watch retailer. All brand names, logos, and model names are trademarks of their respective owners; listing them here does not imply an exclusive or official partnership.</p>
+      </section>
+
+      <section class="section">
+        <div class="about-layout">
+          <div class="about-art" id="about-art"></div>
+          <div class="about-copy">
+            <p class="eyebrow">About LUXORA</p>
+            <h2>Crafting Moments, Defining Time</h2>
+            <p>At LUXORA, we believe a watch is more than an accessory &mdash; it's a record of your journey, your milestones, and the moments you didn't want to forget. Every case we sell is inspected by hand before it ships.</p>
+            <p>We work with six in-house watchmaking lines, each built around one idea: a watch you buy today should still be worth wearing in twenty years.</p>
+            <p style="font-size:.8rem; color:var(--muted); border-left: 2px solid var(--gold); padding-left: 14px;">Pricing note: figures shown are indicative NPR estimates based on typical authorized-dealer pricing and current exchange rates. Luxury watch prices change often &mdash; always confirm the final price with us or the brand's authorized dealer before purchase.</p>
+            <a class="btn btn--ghost" href="#/watches">Discover Our Collections</a>
+            <div class="about-stats">
+              <div class="about-stat"><strong>10+</strong><span>Years of Excellence</span></div>
+              <div class="about-stat"><strong>5,000+</strong><span>Happy Customers</span></div>
+              <div class="about-stat"><strong>100%</strong><span>Authentic Products</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-gallery" id="about-gallery"></div>
+      </section>
+    </section>
+
+    <!-- ============ WATCHES ============ -->
+    <section class="page" id="page-watches">
+      <div class="products-toolbar">
+        <div class="chips" id="category-chips">
+          <button type="button" class="chip chip--active" data-cat="all">All</button>
+          <button type="button" class="chip" data-cat="Classic">Classic</button>
+          <button type="button" class="chip" data-cat="Sport">Sport</button>
+          <button type="button" class="chip" data-cat="Premium">Premium</button>
+        </div>
+        <div class="products-toolbar__right">
+          <input type="search" id="products-search-field" class="products-search" placeholder="Search within watches…" aria-label="Search watches" />
+          <select id="sort-select" class="sort-select" aria-label="Sort watches">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <h1 class="products-heading" id="products-heading">All Watches</h1>
+      <div class="product-grid" id="product-grid"></div>
+      <p class="empty-state" id="products-empty" style="display:none">No watches match your search. Try a different term or collection.</p>
+    </section>
+
+    <!-- ============ PRODUCT DETAIL ============ -->
+    <section class="page" id="page-product">
+      <nav class="breadcrumb" id="pdp-breadcrumb" aria-label="Breadcrumb"></nav>
+      <div class="pdp" id="product-detail-container"></div>
+    </section>
+
+    <!-- ============ CART ============ -->
+    <section class="page" id="page-cart">
+      <h1 class="page-title">Your Cart</h1>
+      <p class="empty-state" id="cart-empty">Your cart is empty. <a href="#/watches">Continue shopping &rarr;</a></p>
+      <div class="cart-layout">
+        <ul class="cart-list" id="cart-list"></ul>
+        <aside class="cart-summary" id="cart-summary">
+          <h2 class="cart-summary__title">Order Summary</h2>
+          <div class="cart-summary__row"><span>Subtotal</span><span id="cart-subtotal">Rs. 0</span></div>
+          <div class="cart-summary__row"><span>Shipping</span><span id="cart-shipping">Rs. 0</span></div>
+          <p class="cart-summary__note">Free delivery on orders over Rs. 50,000</p>
+          <div class="cart-summary__row cart-summary__row--total"><span>Total</span><span id="cart-total">Rs. 0</span></div>
+
+          <form id="checkout-form" class="checkout-fields" novalidate>
+            <div class="field">
+              <label for="checkout-name">Full name</label>
+              <input type="text" id="checkout-name" required />
+              <span class="field__error"></span>
+            </div>
+            <div class="field">
+              <label for="checkout-email">Email</label>
+              <input type="email" id="checkout-email" required />
+              <span class="field__error"></span>
+            </div>
+            <div class="field">
+              <label for="checkout-phone">Phone</label>
+              <input type="tel" id="checkout-phone" required />
+              <span class="field__error"></span>
+            </div>
+            <div class="field">
+              <label for="checkout-address">Delivery address</label>
+              <textarea id="checkout-address" rows="2" required></textarea>
+              <span class="field__error"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--wide" id="checkout-btn">Checkout</button>
+            <p class="form-message" id="checkout-message"></p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ WISHLIST ============ -->
+    <section class="page" id="page-wishlist">
+      <h1 class="page-title">Your Wishlist</h1>
+      <p class="empty-state" id="wishlist-empty">Nothing saved yet. <a href="#/watches">Browse watches &rarr;</a></p>
+      <div class="wishlist-grid" id="wishlist-grid"></div>
+    </section>
+
+    <!-- ============ ACCOUNT ============ -->
+    <section class="page" id="page-account">
+      <div id="account-guest" style="display:none">
+        <div class="auth-card">
+          <h1 class="page-title">My Account</h1>
+          <p class="auth-card__sub">Log in to see your saved cart, wishlist, and order history.</p>
+          <a class="btn btn--primary btn--wide" href="#/login">Log In</a>
+          <p class="auth-card__switch">New here? <a href="#/signup">Create an account</a></p>
+        </div>
+      </div>
+
+      <div id="account-signed-in" style="display:none">
+        <div class="account-layout">
+          <div class="account-profile">
+            <h1 class="page-title" style="padding-left:0">My Account</h1>
+            <p class="account-profile__name" id="account-name"></p>
+            <p class="account-profile__email" id="account-email"></p>
+            <button type="button" class="btn btn--ghost btn--wide" id="logout-btn">Log Out</button>
+          </div>
+          <div class="account-orders-panel">
+            <h2 class="cart-summary__title">Order History</h2>
+            <p class="empty-state" id="account-orders-empty" style="display:none">No orders yet. <a href="#/watches">Start shopping &rarr;</a></p>
+            <div id="account-orders"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOGIN ============ -->
+    <section class="page" id="page-login">
+      <div class="auth-card">
+        <h1 class="page-title">Welcome back</h1>
+        <p class="auth-card__sub">Sign in to view your orders and saved items.</p>
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+            <span class="field__error"></span>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required minlength="6" />
+            <span class="field__error"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--wide">Log In</button>
+          <p class="form-message" id="login-message"></p>
+        </form>
+        <p class="auth-card__switch">New here? <a href="#/signup">Create an account</a></p>
+      </div>
+    </section>
+
+    <!-- ============ SIGNUP ============ -->
+    <section class="page" id="page-signup">
+      <div class="auth-card">
+        <h1 class="page-title">Create your account</h1>
+        <p class="auth-card__sub">Takes less than a minute.</p>
+        <form id="signup-form" novalidate>
+          <div class="field">
+            <label for="signup-name">Full name</label>
+            <input type="text" id="signup-name" required />
+            <span class="field__error"></span>
+          </div>
+          <div class="field">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required />
+            <span class="field__error"></span>
+          </div>
+          <div class="field">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required minlength="6" />
+            <span class="field__error"></span>
+          </div>
+          <div class="field">
+            <label for="signup-confirm">Confirm password</label>
+            <input type="password" id="signup-confirm" required minlength="6" />
+            <span class="field__error"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--wide">Sign Up</button>
+          <p class="form-message" id="signup-message"></p>
+        </form>
+        <p class="auth-card__switch">Already have an account? <a href="#/login">Log in</a></p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="page" id="page-contact">
+      <div class="contact-layout">
+        <div class="contact-intro">
+          <h1 class="page-title">Get in touch</h1>
+          <p>Questions about an order, a return, or a watch we should carry? Send a note &mdash; a real person reads every message.</p>
+          <ul class="contact-details">
+            <li><strong>Email</strong><span id="contact-email-display"></span></li>
+            <li><strong>Phone</strong><span id="contact-phone-display"></span></li>
+            <li><strong>Hours</strong><span>Sun&ndash;Fri, 10am&ndash;7pm</span></li>
+            <li><strong>Location</strong><span>Biratnagar, Koshi, Nepal</span></li>
+          </ul>
+        </div>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="field">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" required />
+            <span class="field__error"></span>
+          </div>
+          <div class="field">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" required />
+            <span class="field__error"></span>
+          </div>
+          <div class="field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" rows="5" required></textarea>
+            <span class="field__error"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--wide">Send Message</button>
+          <p class="form-message" id="contact-form-message"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="logo" href="#/home">
+          <svg class="logo__tag" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="12" y1="12" x2="12" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="12" y1="12" x2="15.2" y2="13.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span class="logo__word">LUXORA</span>
+        </a>
+        <p>Timeless elegance, one watch at a time.</p>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Shop</h3>
+        <a href="#/watches?cat=Classic">Classic</a>
+        <a href="#/watches?cat=Sport">Sport</a>
+        <a href="#/watches?cat=Premium">Premium</a>
+        <a href="#/watches">All Watches</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Account</h3>
+        <a href="#/login">Log In</a>
+        <a href="#/signup">Sign Up</a>
+        <a href="#/cart">Cart</a>
+        <a href="#/wishlist">Wishlist</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Follow</h3>
+        <div class="social-row">
+          <a class="icon-btn" href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+          </a>
+          <a class="icon-btn" href="#" aria-label="X (Twitter)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4L20 20M20 4L4 20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </a>
+          <a class="icon-btn" href="#" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 17.5c.6-2.3 1.2-4.8 1.7-6.8m1.6 2.1c1.9.6 3.9-.4 3.9-2.7 0-1.9-1.6-3.2-3.7-3.2-2.6 0-4 1.8-4 3.7 0 1 .4 1.7 1 2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; 2026 LUXORA. All rights reserved. Built with HTML, CSS &amp; JavaScript &mdash; no frameworks.</p>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("contact-email-display").textContent = STORE_EMAIL;
+    document.getElementById("contact-phone-display").textContent = STORE_PHONE;
+  </script>
+</body>
+</html>
