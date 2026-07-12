@@ -6,8 +6,8 @@
    For demo without Supabase, the app falls back to localStorage.
    ========================================================= */
 
-const SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR-ANON-PUBLIC-KEY";
+const SUPABASE_URL = "https://waolhycpotenkzxgbzqg.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_molQ0vYMbxY7RFIZNrAHyw_z0T0zPo0";
 
 // Create Supabase client if library is loaded
 let sb;
